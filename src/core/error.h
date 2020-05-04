@@ -10,7 +10,7 @@ extern "C" {
 #include <string.h>
 
 #include "enum.h"
-#include "lex.h"
+#include "lexer.h"
 
 
 typedef struct ErrorInfor{
