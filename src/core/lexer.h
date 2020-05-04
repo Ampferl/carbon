@@ -6,7 +6,7 @@ extern "C" {
 #endif
 
 #include <stdio.h>
-//#include "enum.h"
+#include "enum.h"
 
 typedef struct Token{
     TokenType type;
