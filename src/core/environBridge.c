@@ -2,7 +2,7 @@
 #include <dlfcn.h>
 #include "environ.h"
 
-void environ_initDynamic(VanEnviron *env){
+void environ_initDynamic(Environ *env){
     char *dirName="./src/external/";
 
     DIR *dp=NULL;
@@ -27,7 +27,7 @@ void environ_initDynamic(VanEnviron *env){
                 if(fp){
                     handler=dlsym(fp, "nativeFunction_Load");
                     if(handler){
-                        void (*fc1)(VanEnviron *)=handler;
+                        void (*fc1)(Environ *)=handler;
 
                         fc1(env);
                         printf("initDynamic is -----%s\n",dirp->d_name);
@@ -43,8 +43,8 @@ void environ_initDynamic(VanEnviron *env){
     closedir(dp);
 }
 
-void environ_brigeNativeFunction(VanEnviron *env,VanFunction *func){
-    VanWrap *nativeWrap=NULL;
+void environ_brigeNativeFunction(Environ *env,Function *func){
+    Wrap *nativeWrap=NULL;
 
     char *name=NULL;
 
@@ -55,8 +55,8 @@ void environ_brigeNativeFunction(VanEnviron *env,VanFunction *func){
 
 }
 
-void environ_brigeNativeClass(VanEnviron *env,VanClass *cls){
-    VanWrap *nativeWrap=NULL;
+void environ_brigeNativeClass(Environ *env,Class *cls){
+    Wrap *nativeWrap=NULL;
 
     char *name=NULL;
 
@@ -67,8 +67,8 @@ void environ_brigeNativeClass(VanEnviron *env,VanClass *cls){
 }
 
 
-void environ_initBuiltin(VanEnviron *env){
-    VanClass *cls=NULL;
+void environ_initBuiltin(Environ *env){
+    Class *cls=NULL;
 
     cls=wrap_createListClass();
     environ_brigeNativeClass(env,cls);

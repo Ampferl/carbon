@@ -91,7 +91,7 @@ typedef enum {
     TokenSubType_LeftShiftAssgin,
     TokenSubType_RightShiftAssgin,
     TokenSubType_XOrAssgin,
-    TokenSubType_XAndAssgin
+    TokenSubType_XAndAssgin,
     TokenSubType_XErAssgin,
     TokenSubType_AssignEnd,
 

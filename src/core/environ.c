@@ -1593,7 +1593,7 @@ static void environ_evalSuper(Environ *env,ASTNode *astNode){
 
 static void environ_evalString(Environ *env,ASTNode *astNode){
     Wrap *wrap=NULL;
-    String *Str=NULL;
+    String *carbStr=NULL;
 
     int len=0;
     char *data1=NULL;
