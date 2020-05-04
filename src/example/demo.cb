@@ -1,0 +1,19 @@
+class Demo{
+	field name;
+
+	def setName(name){
+		self.name=name;
+	}
+
+	def getName(){
+		return self.name;
+	}
+
+}
+
+
+d=new Demo;
+
+d.setName("Jonas");
+
+print "Hello, ", d.getName(), "!";
