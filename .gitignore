@@ -20,5 +20,6 @@
 *.autosave
 .vscode
 .DS_Store
+.idea
 
 carbon
