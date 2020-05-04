@@ -1,5 +1,5 @@
-#ifndef LEXENUM_H
-#define LEXENUM_H
+#ifndef LEXERENUM_H
+#define LEXERENUM_H
 
 #ifdef __cplusplus
 extern "C" {
