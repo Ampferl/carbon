@@ -1,3 +1,10 @@
+#include "environ.h"
+#include "lexer.h"
+#include "data.h"
+#include "parse.h"
+
+void execStr(char *data);
+
 
 int main(int argc, char **argv){
     char *fileName = NULL;
@@ -24,4 +31,25 @@ int main(int argc, char **argv){
     execStr(data);
 
     return 0;
+}
+
+
+void execStr(char *data){
+    Environ *env=NULL;
+
+    int length=0;
+    Token *token=NULL;
+    Token *token1=NULL;
+    ASTNode *node=NULL;
+
+    length=strlen(data);
+    lexStr(data, &token,&token1);
+    env=environ_create();
+    if(token){
+
+        parseToken(token,&node);
+
+        environ_eval(env,node);
+    }
+
 }
