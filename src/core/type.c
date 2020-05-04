@@ -1,6 +1,5 @@
 #include "type.h"
 
-// new String(""|true|false|null|1)
 Wrap *String_new(Wrap *self,List *arglist){
     Wrap *wStr=NULL;
     String *vStr=NULL;
